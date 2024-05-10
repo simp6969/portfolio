@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: #323232;
+  background-color: #ddd0c8;
+  user-select: none;
+}
+.projects:hover {
+  scale: 1.03;
+  cursor: pointer;
+}
+
+.parentDivProfile:hover {
+  .childDivProfile {
+    scale: 1.5;
+    margin-right: 30vw;
+  }
+}
