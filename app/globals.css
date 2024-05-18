@@ -58,3 +58,17 @@ html {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+.parentHover:hover {
+  .hover {
+    display: flex;
+  }
+  .no_hover {
+    display: none;
+  }
+}
+svg:hover {
+  scale: 1.1;
+  transition-duration: 300ms;
+  cursor: pointer;
+}
