@@ -2,32 +2,104 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.LandingPageBody {
+  height: 100vh;
+  width: 100vw;
+  padding-left: 130px;
+  padding-top: 55px;
+  overflow-x: hidden;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #d9a497;
+  color: #3b2321;
+  overflow-x: hidden;
+  user-select: none;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500;
+  font-style: normal;
+  /* font-family: "Poppins", sans-serif; */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.header {
+  width: 100vw;
+  display: flex;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 45%;
+}
+
+button {
+  transition-duration: 300ms;
+}
+button:hover {
+  scale: 1.05;
+}
+.headerButton {
+  transition: all 400ms;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.headerButton:hover {
+  border-bottom: 2px solid #3b2321;
+}
+
+.projects {
+  position: relative;
+  height: 159vh;
+  animation: animatetop 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+@keyframes animatetop {
+  from {
+    bottom: 100vw;
+    opacity: 0;
   }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+.LandingPageBodyPageChange {
+  position: relative;
+  animation: animateBottom 1.2s ease-in-out forwards;
+}
+
+@keyframes animateBottom {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: 100vh;
+    opacity: 0;
+  }
+}
+.coverProject1 {
+  background: url("/project1.png");
+  background-size: cover;
+  background-position: center;
+}
+.coverProject2 {
+  background: url("/project2.png");
+  background-size: cover;
+  background-position: center;
+}
+.coverProject3 {
+  background: url("/project3.png");
+  background-size: cover;
+  background-position: center;
+}
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
 }
