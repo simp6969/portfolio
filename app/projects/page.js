@@ -93,12 +93,12 @@ export default function Projects() {
           </div>
           <div className="w-[50%] h-[100%] flex coverProject3 rounded-[10px]" />
         </div>
-        {/* <button
+        <button
           onClick={() => router.push("/")}
           className="w-[140px] h-[50px] border-2 border-[#381F1D] rounded-[10px] text-[18px]"
         >
           main page
-        </button> */}
+        </button>
       </div>
     </div>
   );
