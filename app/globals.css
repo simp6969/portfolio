@@ -3,15 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #9f6369;
-  --secondary-color: #4a2e31;
-  --font-color: #e2cdbf;
+  --primary-color: #e2cdbf;
+  --secondary-color: #c8a086;
+  --font-color: #fcfaf8;
 }
 
 body {
   background-color: var(--primary-color);
   color: var(--font-color);
   user-select: none;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .defaultHeader {
@@ -52,9 +54,12 @@ svg:hover {
 }
 
 .gradTitle {
-  background: linear-gradient(to left, #e2cdbf, var(--primary-color));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  /* background: linear-gradient(to left, #c08e77, #8a4f44); */
+
+  color: #fcfaf8;
+
+  /* -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
 }
 
 .profile_image:hover {
@@ -78,7 +83,7 @@ svg:hover {
   right: 27%;
 }
 .swiper-button-disabled {
-  opacity: 0.5;
+  opacity: 0.1;
   pointer-events: none;
 }
 .popup {
