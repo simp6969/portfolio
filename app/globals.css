@@ -3,19 +3,220 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --primaryColor: #ac7b4a;
+  --secondaryColor: #6c4122;
+  --thirdColor: #3b1b12;
+  --font-color: #110504;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-Poppins);
+  user-select: none;
+  color: var(--font-color);
+  overflow-x: hidden;
+}
+.page1 {
+  background-image: url(../public/bg1.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.main_img {
+  height: 585px;
+  width: 340px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../public/profile.jpg);
+  animation: image forwards 1s ease;
+}
+
+.main_img1 {
+  height: 585px;
+  width: 340px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(../public/profile.jpg);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.defaultButton {
+  padding: 12px;
+  border-radius: 7px;
+  font-size: 20px;
+  color: var(--primaryColor);
+  width: 120px;
+  transition-duration: 300ms;
+}
+.defaultButton:hover {
+  background-color: #8a542e;
+}
+.para {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  transition-duration: 1000ms;
+  animation: para forwards 1s ease;
+}
+
+@keyframes para {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes image {
+  0% {
+    opacity: 0;
+    transform: translateX(500px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* new css */
+
+.introPage {
+  display: flex !important;
+  background-color: #0e1424;
+  color: #e8dad7;
+  gap: 10%;
+  background-image: url("../public/bg-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 1300px) {
+  .introPage {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+  .justify {
+    height: 50%;
+  }
+}
+
+.swiper-wrapper {
+  transition-duration: 700ms !important;
+}
+
+/* ... other styles ... */
+
+#move {
+  background: #bfa6ab;
+  height: 250px;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(20px);
+  aspect-ratio: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  z-index: 1;
+  /* Add a gentle, continuous animation */
+  animation: gentlePulse 5s infinite alternate ease-in-out;
+}
+
+@keyframes gentlePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly increase size */
+  }
+}
+
+.blobContainer {
+  background-image: url("../public/moon.png");
+  background-size: cover;
+  /* Add a subtle rotation */
+  animation: blobAnimation 3500ms cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Use cubic-bezier for smoother transition */
+}
+
+@keyframes blobAnimation {
+  0% {
+    scale: 1;
+  }
+  100% {
+    scale: 2;
+  }
+}
+
+.HeaderText {
+  animation: HeaderText 3500ms cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Use cubic-bezier and increase duration*/
+}
+
+@keyframes HeaderText {
+  0% {
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.myPhoto {
+  animation: MyPhotoAnime 3500ms cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Use cubic-bezier and increase duration */
+}
+
+@keyframes MyPhotoAnime {
+  0% {
+    transform: translateX(300px) scale(1.5);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1.7);
+  }
+}
+
+.star {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  border-radius: 100%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  z-index: 20;
+}
+
+@keyframes move_right {
+  from {
+    transform: rotate(0deg) translateX(8px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(8px) rotate(-360deg);
+  }
+}
+
+@keyframes move_left {
+  from {
+    transform: rotate(0deg) translateX(8px) rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg) translateX(8px) rotate(360deg);
+  }
 }
