@@ -94,6 +94,8 @@ h1 {
 .introPage {
   display: flex !important;
   background-color: #0e1424;
+  justify-items: center;
+  align-items: center;
   color: #e8dad7;
   background-image: url("../public/bg-desktop.svg");
   background-repeat: no-repeat;
@@ -119,8 +121,6 @@ h1 {
   transition-duration: 700ms !important;
 }
 
-/* ... other styles ... */
-
 #move {
   background: #bfa6ab;
   height: 250px;
@@ -142,53 +142,7 @@ h1 {
     transform: translate(-50%, -50%) scale(1);
   }
   100% {
-    transform: translate(-50%, -50%) scale(1.05); /* Slightly increase size */
-  }
-}
-
-.blobContainer {
-  background-image: url("../public/moon.png");
-  background-size: cover;
-  /* Add a subtle rotation */
-  animation: blobAnimation 3500ms cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Use cubic-bezier for smoother transition */
-}
-
-@keyframes blobAnimation {
-  0% {
-    scale: 1;
-  }
-  100% {
-    scale: 2;
-  }
-}
-
-.HeaderText {
-  animation: HeaderText 3500ms cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Use cubic-bezier and increase duration*/
-}
-
-@keyframes HeaderText {
-  0% {
-    transform: translateX(-500px);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.myPhoto {
-  animation: MyPhotoAnime 3500ms cubic-bezier(0.4, 0, 0.2, 1) forwards; /* Use cubic-bezier and increase duration */
-}
-
-@keyframes MyPhotoAnime {
-  0% {
-    transform: translateX(300px) scale(1.5);
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1.7);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
 
@@ -202,26 +156,7 @@ h1 {
   z-index: 20;
 }
 
-@keyframes move_right {
-  from {
-    transform: rotate(0deg) translateX(8px) rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg) translateX(8px) rotate(-360deg);
-  }
-}
-
-@keyframes move_left {
-  from {
-    transform: rotate(0deg) translateX(8px) rotate(0deg);
-  }
-  to {
-    transform: rotate(-360deg) translateX(8px) rotate(360deg);
-  }
-}
-
 .page2 {
-  background-image: url("../public/page2.svg");
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
@@ -247,12 +182,45 @@ p {
   flex-direction: column;
   gap: 10px;
 }
-.info-container {
-  backdrop-filter: blur(20px);
-  padding: 100px;
-  border-radius: 20px;
-}
+
 .font_title {
   display: inline-block;
   font-size: 40px;
+}
+
+.page2 {
+  background-color: #001220;
+  min-height: 100vh; /* Use min-height for content to expand */
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* Add a background overlay */
+  background-blend-mode: overlay;
+}
+
+.section-heading {
+  font-size: 2.5rem; /* Tailwind equivalent to 40px */
+  font-weight: 700;
+}
+
+/* page 3 */
+
+.page3 {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../public/bg-desktop.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 20px;
+}
+.imageHover {
+  transition: all 700ms;
+}
+
+.imageHover:hover {
+  scale: 1.2;
 }

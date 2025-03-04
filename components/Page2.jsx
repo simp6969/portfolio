@@ -1,30 +1,51 @@
-export function Page2() {
+export function AboutMePage() {
+  const strengths = [
+    "Studied React framework NextJS for 2 years",
+    "CSS, HTML, and JavaScript basic knowledge",
+    "Graduated Pinecone coding academy in 2023",
+    "Basic Python understanding",
+    "Always relaxed",
+    "Works smart, not hard",
+    "Grasp of Tailwind",
+  ];
+  const weaknesses = [
+    "Limited knowledge towards Amazon database",
+    "Prefers to work late at night due to focus",
+    "Sleeps when tired, eats when hungry",
+    "Little busy half the week",
+  ];
   return (
-    <div className="page2 ">
-      <div className="flex flex-col justify-center gap-[20px] items-center">
-        <div className=" info-container gap-[30px] flex">
-          <div className="benefits">
-            <h1 className="font_title">Strengths:</h1>
-            <p>&#8226; Studied react framework NextJS for 2 years</p>
-            <p>&#8226; CSS, HTML and javascript basic knowledge</p>
-            <p>&#8226; Graduated Pinecone coding academy in 2023</p>
-            <p>&#8226; Basic python understanding</p>
-            <p>&#8226; Always relaxed</p>
-            <p>&#8226; Does not works hard but smart</p>
-            <p>&#8226; Grasp of Tailwind </p>
-          </div>
-          <div className="disadvantage">
-            <h1 className="font_title">Disadvantages:</h1>
-            <p>&#8226; Limited knowledges towards amazon database</p>
-            <p>&#8226; Prefers to work late at night due to focus</p>
-            <p>&#8226; When tired sleeps when hungry eats</p>
-            <p>&#8226; Little busy half the week</p>
-          </div>
+    <div className="page2 flex justify-center items-center">
+      <div className="flex flex-col gap-5 items-center">
+        <div className="info-container flex flex-col md:flex-row gap-8 p-8 md:p-12 lg:p-20">
+          <section className="flex flex-col gap-2 border-r-2 border-gray-500 pr-8 md:pr-12">
+            <h2 className="section-heading">Strengths:</h2>
+            <ul className="list-disc list-inside">
+              {strengths.map((strength, index) => (
+                <li key={index} className="text-lg">
+                  {strength}
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section className="flex flex-col gap-2">
+            <h2 className="section-heading">Weaknesses:</h2>
+            <ul className="list-disc list-inside">
+              {weaknesses.map((weakness, index) => (
+                <li key={index} className="text-lg">
+                  {weakness}
+                </li>
+              ))}
+            </ul>
+          </section>
         </div>
-        <p className="text-[white]">Interested in learning more?</p>
-        <div className="bg-[#ad7c4c]  animate-bounce p-[5px] hover:cursor-pointer rounded-[50%] border-2 border-[#694836]">
+        <p className="text-white">Interested in learning more?</p>
+        <button
+          aria-label="Scroll down to contact section"
+          className="hover:animate-none p-2 rounded-full border-2 bg-[white]"
+        >
           <svg
-            className="size-8 text-white"
+            className="size-8 text-[#001220]"
             fill="none"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -34,7 +55,7 @@ export function Page2() {
           >
             <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
           </svg>
-        </div>
+        </button>
       </div>
     </div>
   );

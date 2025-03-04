@@ -1,7 +1,7 @@
 "use client";
 
-import { Page1 } from "@/components/Page1";
-import { Page2 } from "@/components/Page2";
+import { Page3 } from "@/components/Page3";
+import { AboutMePage } from "@/components/Page2";
 import { useEffect, useRef, useState } from "react";
 
 export default function App() {
@@ -67,11 +67,9 @@ export default function App() {
         <div ref={introImageRef} className={"main_img1"} />
       </div>
       <div className="w-[100vw] h-[100vh]">
-        <Page2 />
+        <AboutMePage />
       </div>
-      <div className="w-[100vw] introPage h-[100vh]">
-        <Page1 />
-      </div>
+      <Page3 />
     </div>
   );
 }
