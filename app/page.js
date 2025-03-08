@@ -41,7 +41,6 @@ export default function App() {
 
     return () => {
       observer.disconnect();
-      t;
     };
   }, []);
   return (
@@ -56,11 +55,29 @@ export default function App() {
             <p>Full-stack developer</p>
           </div>
           <div className="flex gap-[20px]">
-            <button className="defaultButton bg-[var(--secondaryColor)]">
+            <button
+              onClick={() =>
+                window.scroll({
+                  left: 0,
+                  top: window.innerHeight * 2,
+                  behavior: "smooth",
+                })
+              }
+              className="defaultButton bg-[var(--secondaryColor)]"
+            >
               Contact
             </button>
-            <button className="defaultButton !text-[var(--secondaryColor)] border-4 border-[var(--secondaryColor)]">
-              Projects
+            <button
+              onClick={() =>
+                window.scroll({
+                  left: 0,
+                  top: window.innerHeight,
+                  behavior: "smooth",
+                })
+              }
+              className="defaultButton !text-[var(--secondaryColor)] border-4 border-[var(--secondaryColor)]"
+            >
+              About
             </button>
           </div>
         </div>

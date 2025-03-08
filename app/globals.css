@@ -14,6 +14,7 @@ body {
   user-select: none;
   color: var(--font-color);
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 .page1 {
   background-image: url(../public/bg1.svg);
@@ -190,20 +191,17 @@ p {
 
 .page2 {
   background-color: #001220;
-  min-height: 100vh; /* Use min-height for content to expand */
+  min-height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
   background-size: cover;
-  /* Add a background overlay */
   background-blend-mode: overlay;
 }
 
 .section-heading {
-  font-size: 2.5rem; /* Tailwind equivalent to 40px */
+  font-size: 2.5rem;
   font-weight: 700;
 }
-
-/* page 3 */
 
 .page3 {
   display: flex;
@@ -217,10 +215,39 @@ p {
   background-size: cover;
   gap: 20px;
 }
-.imageHover {
+
+svg {
   transition: all 700ms;
 }
+svg:hover {
+  cursor: pointer;
+  fill: white;
+}
+.window-animation {
+  transition: transform 0.7s ease, opacity 0.7s ease, scale 0.7s ease;
+}
 
-.imageHover:hover {
-  scale: 1.2;
+.about-me-list-item {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.about-me-list-item.in-view {
+  opacity: 1;
+}
+
+.copyable-text {
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+
+.copyable-text:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.copied-feedback {
+  color: green !important;
+  font-weight: bold;
+  text-decoration: none !important;
 }
