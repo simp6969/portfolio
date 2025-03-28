@@ -51,21 +51,21 @@ export function Page3() {
 
   const handleCopy = (text, setter) => {
     navigator.clipboard.writeText(text);
-    setter(true); // Set state to show copied feedback
+    setter(true);
     setTimeout(() => {
-      setter(false); // Reset state after 2 seconds
+      setter(false);
     }, 2000);
   };
 
   return (
-    <div ref={pageRef} className="page3">
+    <div ref={pageRef} className="page3 w-full">
       <div
         ref={windowRef}
-        className="window-animation bg-[#18213a] p-[20px] flex rounded-[10px]"
+        className="window-animation bg-[#18213a] p-4 md:p-5 flex flex-col md:flex-row rounded-[10px] max-[375px]:w-[90%] min-[780px]:w-[500px] md:w-[80%] mx-auto gap-4 md:gap-8"
       >
-        <div className="w-[50%] flex gap-[10px] flex-col">
-          <h1 className="text-[#57566b] text-[20px]">Contact me</h1>
-          <h1 className="text-[white] w-[300px] text-[30px]">
+        <div className="w-full flex flex-col gap-2 md:gap-4">
+          <h1 className="text-[#57566b] text-lg md:text-xl">Contact me</h1>
+          <h1 className="text-[white] text-2xl md:text-3xl max-w-full w-[100%]">
             Let's talk about your project
           </h1>
           <h1
@@ -73,7 +73,7 @@ export function Page3() {
             onClick={() =>
               handleCopy("ariunboldbold200@gmail.com", setEmailCopied)
             }
-            className={`text-[#57566b] text-[20px] copyable-text ${
+            className={`text-[#57566b] text-lg md:text-xl copyable-text ${
               emailCopied ? "copied-feedback" : ""
             }`}
           >
@@ -82,13 +82,13 @@ export function Page3() {
           <h1
             ref={phoneRef}
             onClick={() => handleCopy("+976 95550376", setPhoneCopied)}
-            className={`text-[#57566b] text-[20px] copyable-text ${
+            className={`text-[#57566b] text-lg md:text-xl copyable-text ${
               phoneCopied ? "copied-feedback" : ""
             }`}
           >
             +976 95550376
           </h1>
-          <div className="flex gap-[10px]">
+          <div className="flex gap-2 md:gap-4">
             {/* Social media icons (unchanged) */}
             <svg
               onClick={() => {
@@ -132,7 +132,7 @@ export function Page3() {
             </svg>
           </div>
         </div>
-        <div className=""></div>
+        <div className="hidden md:block"></div>
       </div>
     </div>
   );

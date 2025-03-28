@@ -47,9 +47,14 @@ export default function App() {
     <div>
       <div
         ref={containerRef}
-        className="justify-center items-center h-[100vh] w-[100vw] gap-[20px] page1 flex"
+        className="justify-center p-[20px] max-[690px]:flex-wrap max-[690px]:p-[30px] items-center h-[100vh] w-[100vw] gap-[20px] page1 flex"
       >
-        <div ref={introductionRef} className={"flex gap-[10px] flex-col "}>
+        <div
+          ref={introductionRef}
+          className={
+            "flex gap-[10px] flex-col max-[690px]:justify-center max-[690px]:items-center max-[690px]:text-center"
+          }
+        >
           <div>
             <h1 className="font_title">Nice to meet you, im Ariunbold Bold</h1>
             <p>Full-stack developer</p>
@@ -81,7 +86,12 @@ export default function App() {
             </button>
           </div>
         </div>
-        <div ref={introImageRef} className={"main_img1"} />
+        <div
+          ref={introImageRef}
+          className={
+            "main_img1 h-[585px] w-[340px] max-[690px]:w-[240px] max-[690px]:h-[485px]"
+          }
+        />
       </div>
       <div className="w-[100vw] h-[100vh]">
         <AboutMePage />

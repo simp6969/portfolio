@@ -49,24 +49,32 @@ export function AboutMePage() {
   }, []);
 
   return (
-    <div className="page2 flex justify-center items-center">
-      <div className="flex flex-col gap-5 items-center">
-        <div className="info-container flex flex-col md:flex-row gap-8 p-8 md:p-12 lg:p-20">
-          <section className="flex flex-col gap-2 border-r-2 border-gray-500 pr-8 md:pr-12">
-            <h2 className="section-heading">Strengths:</h2>
+    <div className="page2 flex justify-center items-center w-full">
+      <div className="flex flex-col gap-5 items-center w-full px-4 md:px-8">
+        <div className="info-container flex flex-col md:flex-row gap-8 p-4 md:p-8 lg:p-12 w-full max-w-5xl">
+          <section className="flex flex-col gap-2 border-r-0 md:border-r-2 border-gray-500 md:pr-8 w-full md:w-auto">
+            <h2 className="section-heading text-2xl md:text-3xl">Strengths:</h2>
             <ul ref={strengthsListRef} className="list-disc list-inside">
               {strengths.map((strength, index) => (
-                <li key={index} className="text-[25px] about-me-list-item">
+                <li
+                  key={index}
+                  className="text-lg md:text-xl about-me-list-item"
+                >
                   {strength}
                 </li>
               ))}
             </ul>
           </section>
-          <section className="flex flex-col gap-2">
-            <h2 className="section-heading">Weaknesses:</h2>
+          <section className="flex flex-col gap-2 w-full">
+            <h2 className="section-heading text-2xl md:text-3xl">
+              Weaknesses:
+            </h2>
             <ul ref={weaknessesListRef} className="list-disc list-inside">
               {weaknesses.map((weakness, index) => (
-                <li key={index} className="text-[25px] about-me-list-item">
+                <li
+                  key={index}
+                  className="text-lg md:text-xl about-me-list-item"
+                >
                   {weakness}
                 </li>
               ))}

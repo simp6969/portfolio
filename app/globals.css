@@ -22,7 +22,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
-.main_img {
+/* .main_img {
   height: 585px;
   width: 340px;
   background-size: cover;
@@ -30,11 +30,11 @@ body {
   background-repeat: no-repeat;
   background-image: url(../public/profile.jpg);
   animation: image forwards 1s ease;
-}
+} */
 
 .main_img1 {
-  height: 585px;
-  width: 340px;
+  /* height: 585px;
+  width: 340px; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
