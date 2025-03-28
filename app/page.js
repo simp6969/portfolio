@@ -3,6 +3,7 @@
 import { Page3 } from "@/components/Page3";
 import { AboutMePage } from "@/components/Page2";
 import { useEffect, useRef, useState } from "react";
+import { Header } from "@/components/Header";
 
 export default function App() {
   const containerRef = useRef(null);
@@ -45,7 +46,9 @@ export default function App() {
   }, []);
   return (
     <div>
+      <Header />
       <div
+        id="page1"
         ref={containerRef}
         className="justify-center overflow-hidden p-[20px] max-[690px]:flex-wrap max-[690px]:p-[30px] items-center h-[100vh] w-[100vw] gap-[20px] page1 flex"
       >

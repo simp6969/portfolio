@@ -49,7 +49,7 @@ export function AboutMePage() {
   }, []);
 
   return (
-    <div className="page2 flex justify-center items-center w-full">
+    <div id="page2" className="page2 flex justify-center items-center w-full">
       <div className="flex flex-col gap-5 items-center w-full px-4 md:px-8">
         <div className="info-container flex flex-col md:flex-row gap-8 p-4 md:p-8 lg:p-12 w-full max-w-5xl">
           <section className="flex flex-col gap-2 border-r-0 md:border-r-2 border-gray-500 md:pr-8 w-full md:w-auto">

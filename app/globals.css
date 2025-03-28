@@ -8,6 +8,9 @@
   --thirdColor: #3b1b12;
   --font-color: #110504;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: var(--font-Poppins);
@@ -259,4 +262,38 @@ svg:hover {
   .main_img1 {
     transform: translateX(0) !important;
   }
+}
+
+.headerContent {
+  transition-duration: 300ms;
+  width: 100%;
+  /* background-color: var(--secondaryColor); */
+  padding: 20px;
+  position: absolute;
+  transform: translateY(-60px);
+  backdrop-filter: blur(20px);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.header {
+  background-color: var(--primaryColor);
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+}
+
+/* .header:hover {
+  .headerContent {
+    transform: translateY(-100px);
+  }
+} */
+
+.header:hover {
+  .headerContent {
+    transform: translateY(0);
+  }
+}
+
+textarea:focus,
+input:focus {
+  outline: var(--secondaryColor);
 }

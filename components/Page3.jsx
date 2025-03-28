@@ -58,7 +58,7 @@ export function Page3() {
   };
 
   return (
-    <div ref={pageRef} className="page3 w-full">
+    <div id="page3" ref={pageRef} className="page3 w-full">
       <div
         ref={windowRef}
         className="window-animation bg-[#18213a] p-4 md:p-5 flex flex-col md:flex-row rounded-[10px] max-[375px]:w-[90%] min-[780px]:w-[500px] md:w-[80%] mx-auto gap-4 md:gap-8"
