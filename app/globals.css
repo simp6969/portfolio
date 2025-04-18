@@ -297,3 +297,7 @@ textarea:focus,
 input:focus {
   outline: var(--secondaryColor);
 }
+
+.projectDisplay:hover {
+  scale: 1.15;
+}

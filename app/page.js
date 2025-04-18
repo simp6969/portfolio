@@ -4,6 +4,7 @@ import { Page3 } from "@/components/Page3";
 import { AboutMePage } from "@/components/Page2";
 import { useEffect, useRef, useState } from "react";
 import { Header } from "@/components/Header";
+import { Page4 } from "@/components/Page4";
 
 export default function App() {
   const containerRef = useRef(null);
@@ -67,7 +68,7 @@ export default function App() {
               onClick={() =>
                 window.scroll({
                   left: 0,
-                  top: window.innerHeight * 2,
+                  top: window.innerHeight * 3,
                   behavior: "smooth",
                 })
               }
@@ -100,6 +101,7 @@ export default function App() {
         <AboutMePage />
       </div>
       <Page3 />
+      <Page4 />
     </div>
   );
 }
