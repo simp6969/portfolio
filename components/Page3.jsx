@@ -38,14 +38,15 @@ export function Page3() {
   ]);
   const router = useRouter();
 
-  function handleMouse(id, state) {
-    // this.setState(prevState => {
-    //   const components = prevState.components.slice(0);
-    //   components.splice(0, 0, element);
-    //   return { components };
-    // });
-    setProjectDetails((prev) => {});
-  }
+  // removed due to error handling
+  // function handleMouse(id, state) {
+  //   // this.setState(prevState => {
+  //   //   const components = prevState.components.slice(0);
+  //   //   components.splice(0, 0, element);
+  //   //   return { components };
+  //   // });
+  //   setProjectDetails((prev) => {});
+  // }
   return (
     <div
       id="page3"
@@ -54,7 +55,7 @@ export function Page3() {
       {projectDetails.map((e, key) => {
         return (
           <div
-            onMouseEnter={() => handleMouse(e.id, true)}
+            // onMouseEnter={() => handleMouse(e.id, true)}
             key={key}
             onClick={() => router.push(e.link)}
             className="w-[20%] hover:cursor-pointer projectDisplay duration-300 h-[30%] max-[810px]:w-[90%]  max-[840px]:w-[50%]  flex-col max-[1420px]:w-[30%] p-[20px] text-center rounded-[10px] flex justify-center items-center border-8 border-[#18213a] "
