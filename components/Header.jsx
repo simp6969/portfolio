@@ -1,18 +1,15 @@
 export function Header() {
   return (
-    <div className="sticky header top-0 h-[auto] z-[1]">
+    <div className="sticky header top-0 h-[auto] z-[999999]">
       <div className="headerContent flex flex-row gap-[10px]">
         <div className="w-[50%]">
-          <h1 className="text-[25px] text-[white] hover:cursor-pointer">
-            <a href="#page1">Portfolio</a>
+          <h1 className="text-[25px] h-[35px] text-[white]">
+            <a href="#page1" className="hover:cursor-pointer">
+              Portfolio
+            </a>
           </h1>
         </div>
-        {/* <div className="w-[33.33333333%]">
-          <input
-            className="bg-[var(--primary-color)] outline-slate-[1c1c1c] w-[100%] border-2 rounded-[10px] text-[white] p-[5px]"
-            placeholder="search..."
-          ></input>
-        </div> */}
+
         <div className="w-[50%] text-[white] justify-end flex items-center gap-[30px] flex-row">
           <a href="#page2" className="hover:cursor-pointer">
             About

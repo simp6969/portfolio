@@ -5,18 +5,21 @@ import { useEffect, useRef } from "react";
 export function AboutMePage() {
   const strengths = [
     "Studied React framework NextJS for 2 years",
-    "CSS, HTML, and JavaScript basic knowledge",
-    "Graduated Pinecone coding academy in 2023",
+    "CSS, HTML, and JavaScript knowledge",
+    "Graduated Pinecone coding academy",
     "Basic Python understanding",
-    "Always relaxed",
+    "Great leader",
     "Works smart, not hard",
-    "Grasp of Tailwind",
+    "Makes decition not by emotions but facts",
   ];
   const weaknesses = [
     "Limited knowledge towards Amazon database",
     "Prefers to work late at night due to focus",
     "Sleeps when tired, eats when hungry",
     "Little busy half the week",
+    "Sometimes little bit careless",
+    "Tends to arrive late",
+    "Deadlines (im working on it)",
   ];
 
   const strengthsListRef = useRef(null);
@@ -65,7 +68,7 @@ export function AboutMePage() {
               ))}
             </ul>
           </section>
-          <section className="flex flex-col gap-2 w-full">
+          <section className="flex flex-col gap-2 ">
             <h2 className="section-heading text-2xl md:text-3xl">
               Weaknesses:
             </h2>
