@@ -50,7 +50,7 @@ export function Page3() {
             // observer.unobserve(entry.target);
           } else {
             // Optional: Reset animation if you want it to re-trigger on scroll out and back in
-            // entry.target.classList.remove("animate-fadeInScale");
+            entry.target.classList.remove("animate-fadeInScale");
           }
         });
       },

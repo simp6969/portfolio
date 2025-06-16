@@ -10,7 +10,7 @@ export function Header() {
           </h1>
         </div>
 
-        <div className="w-[50%] text-[white] justify-end flex items-center gap-[30px] flex-row">
+        <div className="w-[50%] text-[white] justify-end flex items-center gap-[30px] max-sm:gap-[10px] max-[360px]:gap-[5px] flex-row">
           <a href="#page2" className="hover:cursor-pointer">
             About
           </a>

@@ -56,7 +56,7 @@ export default function App() {
         <div
           ref={introductionRef}
           className={
-            "flex gap-[10px] flex-col max-[690px]:justify-center max-[690px]:items-center max-[690px]:text-center paragraph"
+            "flex gap-[10px] mt-[50px] flex-col max-[690px]:justify-center max-[690px]:items-center max-[690px]:text-center paragraph"
           }
         >
           <div>

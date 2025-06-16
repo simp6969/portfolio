@@ -90,7 +90,7 @@ export function Page4() {
                   : "bg-slate-700/50 hover:bg-slate-600/70 text-slate-300 hover:text-sky-300"
               }`}
           >
-            <p ref={emailRef} className="text-md sm:text-lg">
+            <p ref={emailRef} className="text-md max-sm:text-sm">
               {emailCopied ? "Email Copied!" : "ariunboldbold200@gmail.com"}
             </p>
           </div>
@@ -98,14 +98,14 @@ export function Page4() {
           {/* Phone */}
           <div
             onClick={() => handleCopy("+976 95550376", setPhoneCopied)}
-            className={`p-3 rounded-lg cursor-pointer transition-all duration-300 ease-in-out group
+            className={`p-3 rounded-lg cursor-pointer  transition-all duration-300 ease-in-out group
               ${
                 phoneCopied
                   ? "bg-green-500/80 text-white shadow-lg shadow-green-500/30"
                   : "bg-slate-700/50 hover:bg-slate-600/70 text-slate-300 hover:text-sky-300"
               }`}
           >
-            <p ref={phoneRef} className="text-md sm:text-lg">
+            <p ref={phoneRef} className="text-md max-sm:text-sm">
               {phoneCopied ? "Phone Copied!" : "+976 95550376"}
             </p>
           </div>
