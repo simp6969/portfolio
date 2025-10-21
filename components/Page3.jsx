@@ -72,7 +72,7 @@ export function Page3() {
   return (
     <div
       id="page3"
-      className="h-[70vh] w-full bg-[var(--primaryColor)] flex flex-wrap gap-6 md:gap-8 p-4 md:p-8 justify-center items-center"
+      className="page3 w-full bg-[var(--primaryColor)] flex flex-wrap gap-6 md:gap-8 p-4 md:p-8 justify-center items-center"
     >
       {projectDetails.map((project) => (
         <div

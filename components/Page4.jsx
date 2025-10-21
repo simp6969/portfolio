@@ -61,7 +61,7 @@ export function Page4() {
     <div
       id="page4"
       ref={pageRef}
-      className="h-[80vh] w-full flex justify-center items-center p-4" // Ensure consistent background and centering
+      className="page4 w-full flex justify-center items-center p-4" // Ensure consistent background and centering
     >
       <div
         ref={windowRef}
