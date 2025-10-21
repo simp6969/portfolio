@@ -4,22 +4,18 @@ import { useEffect, useRef } from "react";
 
 export function AboutMePage() {
   const strengths = [
-    "Studied React framework NextJS for 2 years",
-    "CSS, HTML, and JavaScript knowledge",
-    "Graduated Pinecone coding academy",
-    "Basic Python understanding",
-    "Great leader",
-    "Works smart, not hard",
-    "Makes decition not by emotions but facts",
+    "Studied React framework NextJS for 2 years.",
+    "Strong knowledge of CSS, HTML, and JavaScript.",
+    "Graduated Pinecone coding academy.",
+    "Solid foundation in Python.",
+    "A great leader who works smart, not hard.",
+    "Makes decisions based on facts, not emotions.",
   ];
   const weaknesses = [
-    "Limited knowledge towards Amazon database",
-    "Prefers to work late at night due to focus",
-    "Sleeps when tired, eats when hungry",
-    "Little busy half the week",
-    "Sometimes little bit careless",
-    "Tends to arrive late",
-    "Deadlines (im working on it)",
+    "Actively expanding expertise in AWS database and cloud infrastructure.",
+    "Highly effective during periods of deep work and peak focus.",
+    "Developing rigorous testing and review processes for higher code quality.",
+    "Committed to strengthening project execution for punctual delivery of all deadlines.",
   ];
 
   const strengthsListRef = useRef(null);
@@ -52,10 +48,10 @@ export function AboutMePage() {
   }, []);
 
   return (
-    <div id="page2" className="page2 flex justify-center items-center w-full">
+    <div id="page2" className="page2 flex justify-center items-center w-[full]">
       <div className="flex flex-col gap-5 items-center w-full px-4 md:px-8">
         <div className="info-container flex flex-col md:flex-row gap-8 p-4 md:p-8 lg:p-12 w-full max-w-5xl">
-          <section className="flex flex-col gap-2 border-r-0 md:border-r-2 border-gray-500 md:pr-8 w-full md:w-auto">
+          <section className="flex flex-col gap-2 border-r-0 md:border-r-2 border-[var(--primary-accent-color)] md:pr-8 w-full md:w-auto">
             <h2 className="section-heading text-2xl md:text-3xl">Strengths:</h2>
             <ul ref={strengthsListRef} className="list-disc list-inside">
               {strengths.map((strength, index) => (
@@ -68,9 +64,9 @@ export function AboutMePage() {
               ))}
             </ul>
           </section>
-          <section className="flex flex-col gap-2 ">
+          <section className="flex flex-col gap-2 w-[50%]">
             <h2 className="section-heading text-2xl md:text-3xl">
-              Weaknesses:
+              Growth Opportunities:
             </h2>
             <ul ref={weaknessesListRef} className="list-disc list-inside">
               {weaknesses.map((weakness, index) => (

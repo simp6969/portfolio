@@ -61,20 +61,18 @@ export function Page4() {
     <div
       id="page4"
       ref={pageRef}
-      className="min-h-screen w-full bg-[#001220] flex justify-center items-center p-4" // Ensure consistent background and centering
+      className="h-[80vh] w-full flex justify-center items-center p-4" // Ensure consistent background and centering
     >
       <div
         ref={windowRef}
-        className="window-animation bg-slate-800/60 backdrop-blur-md border border-sky-500/30 shadow-xl shadow-sky-700/20
+        className="window-animation  bg-[var(--primary-accent-color)] text-[var(--primary-bg-color)] backdrop-blur-md border shadow-xl 
                    p-6 sm:p-8 flex flex-col rounded-xl
                    w-full max-w-lg md:max-w-xl
                    gap-6 md:gap-8" // Adjusted padding, width, and added futuristic styles
       >
         <div className="w-full flex flex-col gap-3 md:gap-5">
-          <h2 className="text-sky-400 text-lg md:text-xl font-medium">
-            Get in Touch
-          </h2>
-          <h1 className="text-slate-100 text-2xl sm:text-3xl md:text-4xl font-bold">
+          <h2 className=" text-lg md:text-xl font-medium">Get in Touch</h2>
+          <h1 className=" text-2xl sm:text-3xl md:text-4xl font-bold">
             Let's talk about your project
           </h1>
 
@@ -87,7 +85,7 @@ export function Page4() {
               ${
                 emailCopied
                   ? "bg-green-500/80 text-white shadow-lg shadow-green-500/30"
-                  : "bg-slate-700/50 hover:bg-slate-600/70 text-slate-300 hover:text-sky-300"
+                  : "bg-[--primary-bg-color] hover:bg-[#533732] text-[--primary-accent-color] hover:text-[#fcb09f]"
               }`}
           >
             <p ref={emailRef} className="text-md max-sm:text-sm">
@@ -102,7 +100,7 @@ export function Page4() {
               ${
                 phoneCopied
                   ? "bg-green-500/80 text-white shadow-lg shadow-green-500/30"
-                  : "bg-slate-700/50 hover:bg-slate-600/70 text-slate-300 hover:text-sky-300"
+                  : "bg-[--primary-bg-color] hover:bg-[#533732] text-[--primary-accent-color] hover:text-[#fcb09f]"
               }`}
           >
             <p ref={phoneRef} className="text-md max-sm:text-sm">
@@ -115,7 +113,7 @@ export function Page4() {
               href="https://www.facebook.com/profile.php?id=61553207489957"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-sky-400 transition-colors duration-200"
+              className="transition-colors duration-200"
             >
               <svg
                 fill="currentColor"
@@ -130,7 +128,7 @@ export function Page4() {
               href="https://www.instagram.com/ariuka_69/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-sky-400 transition-colors duration-200"
+              className=" transition-colors duration-200"
             >
               <svg
                 fill="currentColor"
@@ -145,7 +143,7 @@ export function Page4() {
               href="https://www.linkedin.com/in/ariunbold-bold-60058b30a/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-sky-400 transition-colors duration-200"
+              className=" transition-colors duration-200"
             >
               <svg
                 fill="currentColor"

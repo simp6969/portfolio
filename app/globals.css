@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --primaryColor: #ac7b4a;
-  --secondaryColor: #6c4122;
-  --thirdColor: #3b1b12;
-  --font-color: #110504;
+  --primary-bg-color: #452f2b;
+  --primary-text: #f4d0d4;
+  --primary-accent-color: #f6bfb3;
+  --secondary-color: #b77e6d;
 }
 html {
   scroll-behavior: smooth;
@@ -15,25 +15,11 @@ html {
 body {
   font-family: var(--font-Poppins);
   user-select: none;
-  color: var(--font-color);
   overflow-x: hidden;
   scroll-behavior: smooth;
+  color: var(--primary-text);
+  background-color: var(--primary-bg-color);
 }
-.page1 {
-  background-image: url(../public/bg1.svg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-/* .main_img {
-  height: 585px;
-  width: 340px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(../public/profile.jpg);
-  animation: image forwards 1s ease;
-} */
 
 .main_img1 {
   /* height: 585px;
@@ -55,13 +41,10 @@ h1 {
   padding: 12px;
   border-radius: 7px;
   font-size: 20px;
-  color: var(--primaryColor);
   width: 120px;
   transition-duration: 300ms;
 }
-.defaultButton:hover {
-  background-color: #8a542e;
-}
+
 .para {
   display: flex;
   gap: 10px;
@@ -97,11 +80,8 @@ h1 {
 
 .introPage {
   display: flex !important;
-  background-color: #0e1424;
   justify-items: center;
   align-items: center;
-  color: #e8dad7;
-  background-image: url("../public/bg-desktop.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -126,7 +106,6 @@ h1 {
 }
 
 #move {
-  background: #bfa6ab;
   height: 250px;
   border-radius: 50%;
   opacity: 0.2;
@@ -152,7 +131,6 @@ h1 {
 
 .star {
   display: block;
-  background-color: #fff;
   position: absolute;
   border-radius: 100%;
   animation-timing-function: linear;
@@ -161,21 +139,17 @@ h1 {
 }
 
 .page2 {
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(223, 223, 223);
 }
 .benefits {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 50%;
-  border-right: 2px rgb(97, 97, 97) solid;
   border-right-style: solid;
 }
 p {
@@ -192,15 +166,6 @@ p {
   font-size: 40px;
 }
 
-.page2 {
-  background-color: #001220;
-  min-height: 100vh;
-  width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: overlay;
-}
-
 .section-heading {
   font-size: 2.5rem;
   font-weight: 700;
@@ -212,7 +177,6 @@ p {
   width: 100vw;
   justify-content: center;
   align-items: center;
-  background-image: url("../public/bg-desktop.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -224,7 +188,6 @@ svg {
 }
 svg:hover {
   cursor: pointer;
-  fill: white;
 }
 .window-animation {
   transition: transform 0.7s ease, opacity 0.7s ease, scale 0.7s ease;
@@ -245,7 +208,6 @@ svg:hover {
 }
 
 .copyable-text:hover {
-  color: white;
   text-decoration: underline;
 }
 
@@ -267,17 +229,13 @@ svg:hover {
 .headerContent {
   transition-duration: 300ms;
   width: 100%;
-  /* background-color: var(--secondaryColor); */
   padding: 20px;
-  position: absolute;
+  /* position: absolute; */
   backdrop-filter: blur(20px);
-  background: rgba(0, 0, 0, 0.6);
 }
 
 .header {
-  background-color: var(--primaryColor);
-  background-color: transparent;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(100px);
 }
 
 /* .header:hover {
