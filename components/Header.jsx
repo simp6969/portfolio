@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <div className="sticky header top-0 h-[8vh] z-[999999]">
+    <div className="sticky header top-0 h-[8vh] z-[9]">
       <div className="headerContent flex flex-row gap-[10px]">
         <div className="w-[50%]">
           <h1 className="text-[25px] h-[35px] text-[white]">

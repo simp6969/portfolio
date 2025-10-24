@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 export function Intro() {
@@ -52,14 +53,14 @@ export function Intro() {
       >
         <div>
           <h1 className="font_title">Nice to meet you, im Ariunbold Bold</h1>
-          <p>Full-stack developer</p>
+          <p>Software & Hardware Developer (16 years old)</p>
         </div>
         <div className="flex gap-[20px]">
           <button
             onClick={() =>
               window.scroll({
                 left: 0,
-                top: window.innerHeight * 3,
+                top: window.innerHeight * 4,
                 behavior: "smooth",
               })
             }
@@ -84,9 +85,18 @@ export function Intro() {
       <div
         ref={introImageRef}
         className={
-          "main_img1 h-[690px] w-[530px] max-[690px]:w-[240px] max-[690px]:h-[485px]"
+          "h-[690px] w-[530px] max-[690px]:w-[240px] max-[690px]:h-[485px]"
         }
-      />
+      >
+        <Image
+          height={690}
+          width={530}
+          alt="yeah that me"
+          fetchPriority="high"
+          src={"/profile.webp"}
+          loading="eager"
+        />
+      </div>
     </div>
   );
 }

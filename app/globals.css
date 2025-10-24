@@ -27,7 +27,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(../public/profile.jpg);
+  background-image: url(../public/profile.webp);
 }
 
 body::-webkit-scrollbar {

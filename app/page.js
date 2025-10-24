@@ -1,10 +1,11 @@
 "use client";
 
-import { Page3 } from "@/components/Page3";
-import { AboutMePage } from "@/components/Page2";
+import { ProjectShowcase } from "@/components/projectShowcase";
+import { AboutMePage } from "@/components/AboutMe";
 import { Header } from "@/components/Header";
-import { Page4 } from "@/components/Page4";
+import { ContactList } from "@/components/ContactList";
 import { Intro } from "@/components/IntroPage";
+import { CreativeEngineering } from "@/components/CreativeEngineering";
 
 export default function App() {
   return (
@@ -12,8 +13,9 @@ export default function App() {
       <Header />
       <Intro />
       <AboutMePage />
-      <Page3 />
-      <Page4 />
+      <ProjectShowcase />
+      <CreativeEngineering />
+      <ContactList />
     </div>
   );
 }
