@@ -1,23 +1,27 @@
 import { Poppins } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import MouseFollower from "../components/MouseFollower";
 
 const poppins = Poppins({
   variable: "--font-Poppins",
   subsets: ["latin"],
-  weight: ["600"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata = {
-  title: "portfolio",
-  description: "Ariunbold's personal portfolio",
+  title: "Ariunbold Portfolio",
+  description: "Ariunbold's Portfolio",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Analytics />
-      <body className={`${poppins.variable} antialiased`}>{children}</body>
+      <body className={`${poppins.variable} antialiased`}>
+        <MouseFollower />
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

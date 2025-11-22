@@ -43,59 +43,69 @@ export function Intro() {
     <div
       id="page1"
       ref={containerRef}
-      className="justify-center overflow-hidden p-[20px] max-[690px]:flex-wrap max-[690px]:p-[30px] items-center h-[92vh] w-[100vw] gap-[20px] page1 flex"
+      className="introPage min-h-[92vh] w-full overflow-hidden relative"
     >
-      <div
-        ref={introductionRef}
-        className={
-          "flex gap-[20px] mt-[50px] flex-col max-[690px]:justify-center max-[690px]:items-center max-[690px]:text-center paragraph"
-        }
-      >
-        <div>
-          <h1 className="font_title">Nice to meet you, im Ariunbold Bold</h1>
-          <p>Software & Hardware Developer (16 years old)</p>
+      {/* Background Elements */}
+      <div className="absolute top-20 left-20 w-72 h-72 bg-[#8B2C40]/20 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#72363E]/20 rounded-full blur-[100px] animate-pulse delay-1000" />
+
+      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between w-full px-6 lg:px-12 gap-12 z-10">
+        <div
+          ref={introductionRef}
+          className="flex flex-col gap-6 max-w-2xl lg:items-start items-center text-center lg:text-left"
+        >
+          <div>
+            <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
+              Nice to meet you, <br />
+              <span className="text-gradient-accent">I'm Ariunbold Bold</span>
+            </h1>
+            <p className="text-xl text-[var(--primary-text)] opacity-80">
+              Software & Hardware Developer (16 years old)
+            </p>
+          </div>
+          
+          <div className="flex gap-4 mt-4">
+            <button
+              onClick={() =>
+                window.scroll({
+                  left: 0,
+                  top: window.innerHeight * 4,
+                  behavior: "smooth",
+                })
+              }
+              className="defaultButton btn-primary"
+            >
+              Contact Me
+            </button>
+            <button
+              onClick={() =>
+                window.scroll({
+                  left: 0,
+                  top: window.innerHeight,
+                  behavior: "smooth",
+                })
+              }
+              className="defaultButton btn-outline"
+            >
+              About Me
+            </button>
+          </div>
         </div>
-        <div className="flex gap-[20px]">
-          <button
-            onClick={() =>
-              window.scroll({
-                left: 0,
-                top: window.innerHeight * 4,
-                behavior: "smooth",
-              })
-            }
-            className="defaultButton bg-[var(--primary-accent-color)] text-[--primary-bg-color] hover:bg-[#fcb09f]"
-          >
-            Contact
-          </button>
-          <button
-            onClick={() =>
-              window.scroll({
-                left: 0,
-                top: window.innerHeight,
-                behavior: "smooth",
-              })
-            }
-            className="defaultButton  border-[3px] border-[var(--primary-accent-color)] hover:text-[#fcb09f]"
-          >
-            About
-          </button>
+
+        <div
+          ref={introImageRef}
+          className="relative w-[280px] h-[280px] lg:w-[500px] lg:h-[500px] animate-float"
+        >
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#8B2C40] to-[#72363E] rounded-full blur-2xl opacity-20"></div>
+          <Image
+            height={690}
+            width={530}
+            alt="Ariunbold Bold"
+            priority
+            src={"/profile.webp"}
+            className="object-cover rounded-3xl shadow-2xl border border-[var(--glass-border)] relative z-10 w-full h-full"
+          />
         </div>
-      </div>
-      <div
-        ref={introImageRef}
-        className={
-          "h-[690px] w-[530px] max-[690px]:w-[240px] max-[690px]:h-[485px]"
-        }
-      >
-        <Image
-          height={690}
-          width={530}
-          alt="yeah that me"
-          fetchPriority="high"
-          src={"/profile.webp"}
-          loading="eager"
-        />
       </div>
     </div>
   );

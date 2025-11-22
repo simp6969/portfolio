@@ -47,33 +47,49 @@ export function AboutMePage() {
   }, []);
 
   return (
-    <div id="page2" className="page2 flex justify-center items-center w-[full]">
-      <div className="flex flex-col gap-5 items-center w-full px-4 md:px-8">
-        <div className="info-container flex flex-col md:flex-row gap-8 p-4 md:p-8 lg:p-12 w-[100vw] max-w-5xl">
-          <section className="flex flex-col gap-2 border-r-0 md:border-r-2 border-[var(--primary-accent-color)] md:pr-8 sm-[770px]:w-[100%] w-[100%]">
-            <h2 className="section-heading text-2xl md:text-3xl">Strengths:</h2>
-            <ul ref={strengthsListRef} className="list-disc list-inside">
+    <div id="page2" className="page2 relative">
+      <div className="flex flex-col gap-12 items-center w-full px-4 md:px-8 max-w-7xl mx-auto z-10">
+        <div className="grid md:grid-cols-2 gap-12 w-full">
+          
+          {/* Strengths Section */}
+          <section className="flex flex-col gap-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-1 w-12 bg-gradient-to-r from-[#8B2C40] to-[#72363E] rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-text)]">Strengths</h2>
+            </div>
+            
+            <ul ref={strengthsListRef} className="flex flex-col gap-4">
               {strengths.map((strength, index) => (
                 <li
                   key={index}
-                  className="text-lg md:text-xl about-me-list-item py-2"
+                  className="about-me-list-item glass-card p-6 rounded-xl text-lg text-[var(--primary-text)]"
                 >
-                  {strength}
+                  <div className="flex gap-4 items-start">
+                    <span className="text-2xl font-bold text-[var(--primary-accent-color)]">-</span>
+                    <p>{strength}</p>
+                  </div>
                 </li>
               ))}
             </ul>
           </section>
-          <section className="flex flex-col gap-2 w-[100%] md-[770px]:w-[100%]">
-            <h2 className="section-heading leading-[40px] text-2xl md:text-3xl">
-              Growth Opportunities:
-            </h2>
-            <ul ref={weaknessesListRef} className="list-disc list-inside">
+
+          {/* Growth Opportunities Section */}
+          <section className="flex flex-col gap-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-1 w-12 bg-gradient-to-r from-[#72363E] to-[#8B2C40] rounded-full"></div>
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--primary-text)]">Growth</h2>
+            </div>
+
+            <ul ref={weaknessesListRef} className="flex flex-col gap-4">
               {weaknesses.map((weakness, index) => (
                 <li
                   key={index}
-                  className="text-lg md:text-xl about-me-list-item py-2"
+                  className="about-me-list-item glass-card p-6 rounded-xl text-lg text-[var(--primary-text)]"
                 >
-                  {weakness}
+                  <div className="flex gap-4 items-start">
+                    <span className="text-2xl font-bold text-[var(--primary-accent-color)]">-</span>
+                    <p>{weakness}</p>
+                  </div>
                 </li>
               ))}
             </ul>
