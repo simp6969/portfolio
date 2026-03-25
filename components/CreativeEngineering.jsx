@@ -1,44 +1,33 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 export function CreativeEngineering() {
-  // State to track the currently selected video URL
   const [selectedVideo, setSelectedVideo] = useState(null);
-
-  // State to control the visibility/animation of the modal
   const [isOpen, setIsOpen] = useState(false);
+  const modalVideoRef = useRef(null);
 
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-
-  // Define video classes for the unclicked state
   const videoClasses =
     "cursor-pointer transform transition-all duration-300 ease-in-out " +
     "hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(139,44,64,0.3)] rounded-xl overflow-hidden border border-[var(--glass-border)]";
 
-  // Function to open the modal and trigger animation
   const openModal = (videoSrc) => {
     setSelectedVideo(videoSrc);
-    // Use a slight delay to ensure the DOM update is ready for the transition
     setTimeout(() => setIsOpen(true), 10);
   };
 
-  // Function to close the modal and trigger reverse animation
   const closeModal = () => {
     setIsOpen(false);
-    // Delay setting selectedVideo to null until animation is complete (duration-300 = 300ms)
     setTimeout(() => setSelectedVideo(null), 300);
   };
 
   return (
     <div className="flex select-text flex-col lg:flex-row p-4 sm:p-8 md:p-12 lg:p-20 min-h-screen w-full gap-8 lg:gap-16 justify-center items-center relative">
-      {/* 1. Modal Overlay */}
+      {/* Modal Overlay */}
       {selectedVideo && (
         <div
-          className={`fixed inset-0 z-[100] flex items-center justify-center transition-all duration-300 backdrop-blur-sm ${
-            isOpen
-              ? "opacity-100 pointer-events-auto bg-black/80"
-              : "opacity-0 pointer-events-none"
-          }`}
+          className={`fixed inset-0 z-[100] flex items-center justify-center transition-all duration-300 backdrop-blur-sm ${isOpen
+            ? "opacity-100 pointer-events-auto bg-black/80"
+            : "opacity-0 pointer-events-none"
+            }`}
           onClick={closeModal}
         >
           <div
@@ -52,9 +41,10 @@ export function CreativeEngineering() {
               className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-[var(--glass-border)]"
               controls
               loop
-              ref={ref1}
-              muted={false}
+              ref={modalVideoRef}
               autoPlay
+              muted={false}
+              playsInline
             >
               <source src={selectedVideo} type="video/mp4" />
               Your browser does not support the video tag.
@@ -69,7 +59,7 @@ export function CreativeEngineering() {
         </div>
       )}
 
-      {/* 2. Main Content */}
+      {/* Main Content */}
       <div className="w-full max-w-7xl flex flex-col gap-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gradient">
           Hardware & Systems Integration
@@ -82,16 +72,17 @@ export function CreativeEngineering() {
                 width="246"
                 height="414"
                 loop
-                muted={true}
+                muted
+                playsInline
                 kind="captions"
-                ref={ref2}
                 preload="auto"
+                poster="/esp32-poster.webp"
                 className={videoClasses}
-                onClick={() => openModal("/2025-10-21-00-18-59-004.mp4")}
+                onClick={() => openModal("/esp32-demo.mp4")}
                 onMouseOver={(event) => event.target.play()}
                 onMouseOut={(event) => event.target.pause()}
               >
-                <source src="/2025-10-21-00-18-59-004.mp4" type="video/mp4" />
+                <source src="/esp32-demo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -123,15 +114,17 @@ export function CreativeEngineering() {
                 width="246"
                 height="414"
                 loop
-                muted={true}
+                muted
+                playsInline
                 kind="captions"
                 preload="auto"
+                poster="/mobile-poster.webp"
                 className={videoClasses}
                 onMouseOver={(event) => event.target.play()}
                 onMouseOut={(event) => event.target.pause()}
-                onClick={() => openModal("/mobile.mp4")}
+                onClick={() => openModal("/mobile-compressed.mp4")}
               >
-                <source src="/mobile.mp4" type="video/mp4" />
+                <source src="/mobile-compressed.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
             </div>

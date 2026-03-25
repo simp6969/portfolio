@@ -1,41 +1,59 @@
 import Image from "next/image";
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+
+const projectDetails = [
+  {
+    name: "Canu",
+    description: "A painting canvas that you can work with teams",
+    thumbnail: "/canu.webp",
+    id: 1,
+    link: "https://canu.vercel.app",
+    git: "https://github.com/simp6969/canu.git",
+  },
+  {
+    thumbnail: "/psp.webp",
+    name: "photo sharing platform",
+    description: "image sharing platform for penetration testing",
+    id: 2,
+    link: "https://github.com/simp6969/psp.git",
+    git: "https://github.com/simp6969/psp.git",
+  },
+  {
+    thumbnail: "/mogio.webp",
+    name: "mogio",
+    description: "2 player snake game",
+    link: "https://mogio.vercel.app",
+    id: 3,
+    git: "https://github.com/simp6969/moi_mogio.git",
+  },
+  {
+    thumbnail: "/todo.webp",
+    name: "Todo",
+    description: "finnaly everyone's favourite",
+    id: 4,
+    link: "https://nexy-beta.vercel.app",
+    git: "",
+  },
+  {
+    thumbnail: "/magalang.webp",
+    name: "magalang",
+    id: 5,
+    description: "A card memorization game",
+    link: "https://magalang.vercel.app",
+    git: "https://github.com/simp6969/magalang.git",
+  },
+  {
+    thumbnail: "/guess.webp",
+    name: "Guess the number",
+    description: "A simple number guessing game",
+    id: 6,
+    link: "https://guessthenumber-amber.vercel.app",
+    git: "https://github.com/simp6969/guess-the-number.git",
+  },
+];
 
 export function ProjectShowcase() {
-  const [projectDetails, setProjectDetails] = useState([
-    {
-      name: "Canu",
-      description: "A painting canvas that you can work with teams",
-      thumbnail: "/canu.webp",
-      id: 1,
-      link: "https://canu.vercel.app",
-      git: "https://github.com/simp6969/canu.git",
-    },
-    {
-      thumbnail: "/hediinbee.webp",
-      name: "hediinbee",
-      description: "Money you can use it all (except its digital)",
-      id: 2,
-      link: "https://hediinbee.vercel.app",
-      git: "https://github.com/simp6969/hediinbee.git",
-    },
-    {
-      thumbnail: "/mogio.webp",
-      name: "mogio",
-      description: "2 player snake game",
-      link: "https://mogio.vercel.app",
-      id: 3,
-      git: "https://github.com/simp6969/moi_mogio.git",
-    },
-    {
-      thumbnail: "/todo.webp",
-      name: "Todo",
-      description: "finnaly everyone's favourite",
-      id: 4,
-      link: "https://nexy-beta.vercel.app",
-      git: "",
-    },
-  ]);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -54,22 +72,22 @@ export function ProjectShowcase() {
       }
     );
 
-    const projectCards = document.querySelectorAll(".project-card-observable");
-    projectCards.forEach((card) => observer.observe(card));
+    const projectCards = containerRef.current?.querySelectorAll(".project-card-observable");
+    projectCards?.forEach((card) => observer.observe(card));
 
     return () => {
-      projectCards.forEach((card) => observer.unobserve(card));
       observer.disconnect();
     };
-  }, [projectDetails]);
+  }, []);
 
   return (
     <div
       id="page3"
+      ref={containerRef}
       className="page3 w-full flex flex-col gap-12 p-4 md:p-8 justify-center items-center relative"
     >
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-8 text-gradient">My Projects</h2>
-      
+
       <div className="flex flex-wrap gap-8 justify-center max-w-7xl">
         {projectDetails.map((project) => (
           <div
@@ -96,10 +114,12 @@ export function ProjectShowcase() {
                   src={project.thumbnail}
                   alt={`${project.name} thumbnail`}
                   fill
+                  sizes="350px"
+                  loading="lazy"
                   className="object-cover"
                 />
               </div>
-              
+
               <div className="flex gap-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-200">
                 <button
                   onClick={() => window.open(project.link, "_blank")}

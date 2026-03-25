@@ -4,9 +4,9 @@
 
 :root {
   --primary-bg-color: #000000;
-  --primary-text: #F5D6BD;
-  --primary-accent-color: #8B2C40;
-  --secondary-color: #72363E;
+  --primary-text: #f5d6bd;
+  --primary-accent-color: #8b2c40;
+  --secondary-color: #72363e;
   --surface-color: rgba(114, 54, 62, 0.1);
   --glass-border: rgba(245, 214, 189, 0.15);
 }
@@ -22,8 +22,12 @@ body {
   scroll-behavior: smooth;
   color: var(--primary-text);
   background-color: var(--primary-bg-color);
-  background-image: 
-    radial-gradient(circle at 15% 50%, rgba(139, 44, 64, 0.15), transparent 30%), 
+  background-image:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(139, 44, 64, 0.15),
+      transparent 30%
+    ),
     radial-gradient(circle at 85% 30%, rgba(114, 54, 62, 0.15), transparent 30%);
 }
 
@@ -46,7 +50,12 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--primary-text);
 }
 
@@ -69,7 +78,12 @@ h1 {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
-  transition: all 0.3s ease;
+  /* transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease; */
+  will-change: transform;
 }
 
 .glass-card:hover {
@@ -80,13 +94,13 @@ h1 {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #F5D6BD, #eec0c6);
+  background: linear-gradient(to right, #f5d6bd, #eec0c6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-accent {
-  background: linear-gradient(to right, var(--primary-accent-color), #F5D6BD);
+  background: linear-gradient(to right, var(--primary-accent-color), #f5d6bd);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -103,7 +117,11 @@ h1 {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-accent-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-accent-color),
+    var(--secondary-color)
+  );
   color: white;
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
@@ -127,13 +145,20 @@ h1 {
 
 /* Animations */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .para {
@@ -211,7 +236,7 @@ h1 {
 
 .about-me-list-item {
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  will-change: opacity;
 }
 
 .about-me-list-item.in-view {
@@ -256,11 +281,13 @@ h1 {
     font-size: 16px;
   }
 
-  .page2, .page3, #page4 {
+  .page2,
+  .page3,
+  #page4 {
     height: auto;
     padding: 40px 0;
   }
-  
+
   .info-container {
     flex-direction: column;
   }
