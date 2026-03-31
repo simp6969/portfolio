@@ -86,7 +86,7 @@ export function CreativeEngineering() {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center gap-[20px]">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[var(--primary-accent-color)]">
                 ESP32 Microcontroller Integration
               </h2>
@@ -104,6 +104,7 @@ export function CreativeEngineering() {
                   Optimized resources for smooth playback on limited hardware.
                 </li>
               </ul>
+              <button className="w-fit px-4 py-2 rounded-[7px] glass-card hover:bg-white/5 transition-colors">More...</button>
             </div>
           </div>
 
@@ -128,7 +129,7 @@ export function CreativeEngineering() {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <div className="flex flex-col justify-center">
+            <div className="flex flex-col justify-center gap-[20px]">
               <h2 className="text-xl sm:text-2xl font-bold mb-4 text-[var(--primary-accent-color)]">
                 Samsung S21 Power Mod
               </h2>
@@ -146,6 +147,7 @@ export function CreativeEngineering() {
                   Showcased hardware modification and thermal management skills.
                 </li>
               </ul>
+              <button className="w-fit px-4 py-2 rounded-[7px] glass-card hover:bg-white/5 transition-colors">More...</button>
             </div>
           </div>
         </div>

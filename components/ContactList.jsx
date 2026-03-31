@@ -26,10 +26,10 @@ export function ContactList() {
               const opacity = Math.min(1, Math.pow(ratio, 0.5) * 1.5);
               const scale = Math.max(0.9, Math.pow(ratio, 0.5));
 
-              windowEl.style.transform = `perspective(1000px) rotateX(${degree}deg) scale3d(${scale}, ${scale}, 1)`;
+              windowEl.style.transform = `perspective(1000px) rotateX(${degree}deg)`;
               windowEl.style.opacity = opacity;
             } else {
-              windowEl.style.transform = `perspective(1000px) rotateX(40deg) scale3d(0.9, 0.9, 1)`;
+              windowEl.style.transform = `perspective(1000px) rotateX(40deg)`;
               windowEl.style.opacity = 0;
             }
           });
@@ -61,7 +61,7 @@ export function ContactList() {
     <div
       id="page4"
       ref={pageRef}
-      className="page4 w-full flex justify-center items-center p-4 min-h-[70vh]"
+      className="page4 w-full flex justify-center items-center p-4 min-h-[100dvh]"
     >
       <div
         ref={windowRef}

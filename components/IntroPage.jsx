@@ -121,6 +121,7 @@ export function Intro() {
             width={530}
             alt="Ariunbold Bold"
             priority
+            quality={60}
             src={"/profile.webp"}
             className="object-cover rounded-3xl shadow-2xl border border-[var(--glass-border)] relative z-1 w-full h-full"
           />

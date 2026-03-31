@@ -27,12 +27,12 @@ const projectDetails = [
     git: "https://github.com/simp6969/moi_mogio.git",
   },
   {
-    thumbnail: "/todo.webp",
-    name: "Todo",
-    description: "finnaly everyone's favourite",
+    thumbnail: "/snow.webp",
+    name: "Snow flakes",
+    description: "A new year celebration snow flakes",
     id: 4,
-    link: "https://nexy-beta.vercel.app",
-    git: "",
+    link: "https://magalang-snowflakes.vercel.app",
+    git: "https://github.com/simp6969/magalang-snowflakes.git",
   },
   {
     thumbnail: "/magalang.webp",
