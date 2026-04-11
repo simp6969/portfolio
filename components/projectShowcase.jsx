@@ -15,7 +15,7 @@ const projectDetails = [
     name: "photo sharing platform",
     description: "image sharing platform for penetration testing",
     id: 2,
-    link: "https://github.com/simp6969/psp.git",
+    link: "https://psp-ten-zeta.vercel.app/",
     git: "https://github.com/simp6969/psp.git",
   },
   {

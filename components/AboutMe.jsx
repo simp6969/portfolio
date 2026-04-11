@@ -100,7 +100,7 @@ export function AboutMePage() {
         });
       },
       {
-        threshold: 1, // Adjust as needed
+        threshold: 0, // Adjust as needed
       }
     );
 

@@ -38,7 +38,7 @@ export function CreativeEngineering() {
           >
             <video
               kind="captions"
-              className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-[var(--glass-border)]"
+              className="w-full max-h-[80dvh] object-contain rounded-2xl shadow-2xl border border-[var(--glass-border)]"
               controls
               loop
               ref={modalVideoRef}

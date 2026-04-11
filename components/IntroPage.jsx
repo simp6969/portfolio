@@ -12,36 +12,32 @@ export function Intro() {
     const introduction = introductionRef.current;
     const introImage = introImageRef.current;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (rafRef.current) cancelAnimationFrame(rafRef.current);
-          rafRef.current = requestAnimationFrame(() => {
-            if (entry.isIntersecting) {
-              const ratio = entry.intersectionRatio;
-              const maxTranslateX = 70;
-              const translateX = maxTranslateX * (1 - ratio);
-              introduction.style.opacity = ratio;
-              introduction.style.transform = `translate3d(${translateX * -1}%, 0, 0)`;
-              introImage.style.transform = `translate3d(${translateX}%, 0, 0)`;
-              introImage.style.opacity = ratio;
-            } else {
-              introduction.style.transform = `translate3d(-100%, 0, 0)`;
-              introduction.style.opacity = 0;
-            }
-          });
-        });
-      },
-      {
-        threshold: Array.from({ length: 60 }, (_, i) => i / 60),
-        root: null,
-      }
-    );
+    const handleScroll = () => {
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        const scrollY = window.scrollY;
+        // Calculate progress: 0 at top, 1 after scrolling 500px or container height
+        // This ensures a smooth fly-out as the user moves away from the intro
+        const containerHeight = container.offsetHeight || 500;
+        const progress = Math.min(1, scrollY / (containerHeight * 0.6));
 
-    observer.observe(container);
+        const maxTranslateX = 70;
+        const translateX = maxTranslateX * progress;
+        const opacity = Math.max(0, 1 - progress);
+
+        introduction.style.opacity = opacity;
+        introduction.style.transform = `translate3d(${translateX * -1}%, 0, 0)`;
+        introImage.style.transform = `translate3d(${translateX}%, 0, 0)`;
+        introImage.style.opacity = opacity;
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Trigger once to set initial state
+    handleScroll();
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
@@ -50,7 +46,7 @@ export function Intro() {
     <div
       id="page1"
       ref={containerRef}
-      className="introPage min-h-[92vh] w-full overflow-hidden relative"
+      className="introPage min-h-[92dvh] z-5 w-full overflow-hidden relative"
     >
       {/* Background Elements — lightweight radial gradients instead of blurred divs */}
       <div
@@ -123,7 +119,7 @@ export function Intro() {
             priority
             quality={60}
             src={"/profile.webp"}
-            className="object-cover rounded-3xl shadow-2xl border border-[var(--glass-border)] relative z-1 w-full h-full"
+            className="!object-cover rounded-3xl shadow-2xl border border-[var(--glass-border)] relative scale-110 z-1 w-full h-full"
           />
         </div>
       </div>

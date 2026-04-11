@@ -191,7 +191,7 @@ h1 {
 
 @media only screen and (max-width: 1300px) {
   .introPage {
-    flex-direction: column-reverse;
+    flex-direction: column;
     gap: 0;
   }
 }
@@ -210,7 +210,7 @@ h1 {
 
 /* Page Specifics */
 .page2 {
-  min-height: 70vh;
+  min-height: 70dvh;
   width: 100dvw;
   height: 100dvh;
   display: flex;
@@ -236,12 +236,13 @@ h1 {
 }
 
 .about-me-list-item {
-  will-change: opacity;
   animation: fadeOutScale 600ms ease-out forwards;
+  will-change: opacity;
 }
 
 .about-me-list-item.in-view {
   animation: fadeInScale 600ms ease-out forwards;
+  will-change: opacity;
 }
 
 /* Header */

@@ -9,7 +9,7 @@ import { CreativeEngineering } from "@/components/CreativeEngineering";
 
 export default function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Header />
       <Intro />
       <AboutMePage />
