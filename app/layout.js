@@ -15,10 +15,8 @@ const SITE_URL = "https://ariunbold.dev";
 export const metadata = {
   // ── Core Meta ──────────────────────────────────────────────
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Ariunbold Bold — Software & Hardware Developer Portfolio",
-    template: "%s | Ariunbold Bold",
-  },
+  title: "Ariunbold Bold — Software & Hardware Developer Portfolio",
+
   description:
     "Ariunbold Bold's developer portfolio showcasing full-stack web applications built with React and Next.js, hardware projects including ESP32 microcontroller integrations and custom device mods, and creative engineering work spanning software and electronics.",
   keywords: [
@@ -43,7 +41,7 @@ export const metadata = {
 
   // ── Canonical & Alternates (fixes "Duplicate without user-selected canonical") ──
   alternates: {
-    canonical: "/",
+    canonical: "https://ariunbold.dev",
   },
 
   // ── Robots (ensures proper indexing) ──────────────────────
@@ -183,6 +181,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <link rel="canonical" href="https://ariunbold.dev/" />
       </head>
       <body className={`${poppins.variable} antialiased`}>
         <MouseFollower />

@@ -115,7 +115,7 @@ export function Intro() {
           <Image
             height={690}
             width={530}
-            alt="Ariunbold Bold"
+            alt="Ariunbold Bold - Full Stack Developer"
             priority
             quality={60}
             src={"/profile.webp"}
