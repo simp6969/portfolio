@@ -115,6 +115,7 @@ export function ProjectShowcase() {
                   alt={`${project.name} thumbnail`}
                   fill
                   sizes="350px"
+                  quality={50}
                   loading="lazy"
                   className="object-cover"
                 />

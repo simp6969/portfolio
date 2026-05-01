@@ -112,6 +112,7 @@ export function ContactList() {
               href="https://www.facebook.com/profile.php?id=61553207489957"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Facebook Profile"
               className="text-gray-400 hover:text-[#1877F2] hover:scale-110 transition-all duration-300"
             >
               <svg
@@ -127,6 +128,7 @@ export function ContactList() {
               href="https://www.instagram.com/ariuka_69/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Instagram Profile"
               className="text-gray-400 hover:text-[#E4405F] hover:scale-110 transition-all duration-300"
             >
               <svg
@@ -142,6 +144,7 @@ export function ContactList() {
               href="https://www.linkedin.com/in/ariunbold-bold-60058b30a/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="LinkedIn Profile"
               className="text-gray-400 hover:text-[#0A66C2] hover:scale-110 transition-all duration-300"
             >
               <svg
@@ -155,6 +158,7 @@ export function ContactList() {
             </a>
             <a target="_blank"
               rel="noopener noreferrer"
+              aria-label="GitHub Profile"
               className="text-gray-400 hover:text-[#1d1d1d] hover:scale-110 transition-all duration-300"
               href="https://github.com/simp6969"><svg
                 fill="currentColor"

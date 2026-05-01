@@ -12,13 +12,18 @@ export function Intro() {
     const introduction = introductionRef.current;
     const introImage = introImageRef.current;
 
+    let containerHeight = container.offsetHeight || 500;
+
+    const handleResize = () => {
+      containerHeight = container.offsetHeight || 500;
+    };
+
     const handleScroll = () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
       rafRef.current = requestAnimationFrame(() => {
         const scrollY = window.scrollY;
         // Calculate progress: 0 at top, 1 after scrolling 500px or container height
         // This ensures a smooth fly-out as the user moves away from the intro
-        const containerHeight = container.offsetHeight || 500;
         const progress = Math.min(1, scrollY / (containerHeight * 0.6));
 
         const maxTranslateX = 70;
@@ -32,11 +37,13 @@ export function Intro() {
       });
     };
 
+    window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll);
     // Trigger once to set initial state
     handleScroll();
 
     return () => {
+      window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
@@ -70,11 +77,11 @@ export function Intro() {
         >
           <div>
             <h1 className="text-5xl lg:text-7xl font-bold mb-4 leading-tight">
-              Nice to meet you, <br />
+              Hi,<br />
               <span className="text-gradient-accent">I'm Ariunbold Bold</span>
             </h1>
             <p className="text-xl text-[var(--primary-text)] opacity-80">
-              Software & Hardware Developer ({new Date().getFullYear() - 2009} years old)
+              Systems Developer & Multidisciplinary Learner
             </p>
           </div>
 
@@ -115,8 +122,9 @@ export function Intro() {
           <Image
             height={690}
             width={530}
-            alt="Ariunbold Bold - Full Stack Developer"
+            alt="Ariunbold Bold - Developer & Multidisciplinary Learner"
             priority
+            fetchPriority="high"
             quality={60}
             src={"/profile.webp"}
             className="!object-cover rounded-3xl shadow-2xl border border-[var(--glass-border)] relative scale-110 z-1 w-full h-full"

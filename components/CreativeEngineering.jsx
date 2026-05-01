@@ -37,7 +37,6 @@ export function CreativeEngineering() {
             onClick={(e) => e.stopPropagation()}
           >
             <video
-              kind="captions"
               className="w-full max-h-[80dvh] object-contain rounded-2xl shadow-2xl border border-[var(--glass-border)]"
               controls
               loop
@@ -47,6 +46,7 @@ export function CreativeEngineering() {
               playsInline
             >
               <source src={selectedVideo} type="video/mp4" />
+              <track kind="captions" label="English" srcLang="en" default />
               Your browser does not support the video tag.
             </video>
             <button
@@ -74,8 +74,7 @@ export function CreativeEngineering() {
                 loop
                 muted
                 playsInline
-                kind="captions"
-                preload="auto"
+                preload="metadata"
                 poster="/esp32-poster.webp"
                 className={videoClasses}
                 onClick={() => openModal("/esp32-demo.mp4")}
@@ -83,6 +82,7 @@ export function CreativeEngineering() {
                 onMouseOut={(event) => event.target.pause()}
               >
                 <source src="/esp32-demo.mp4" type="video/mp4" />
+                <track kind="captions" label="English" srcLang="en" default />
                 Your browser does not support the video tag.
               </video>
             </div>
@@ -117,8 +117,7 @@ export function CreativeEngineering() {
                 loop
                 muted
                 playsInline
-                kind="captions"
-                preload="auto"
+                preload="metadata"
                 poster="/mobile-poster.webp"
                 className={videoClasses}
                 onMouseOver={(event) => event.target.play()}
@@ -126,6 +125,7 @@ export function CreativeEngineering() {
                 onClick={() => openModal("/mobile-compressed.mp4")}
               >
                 <source src="/mobile-compressed.mp4" type="video/mp4" />
+                <track kind="captions" label="English" srcLang="en" default />
                 Your browser does not support the video tag.
               </video>
             </div>
