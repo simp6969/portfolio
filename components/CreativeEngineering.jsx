@@ -78,8 +78,8 @@ export function CreativeEngineering() {
                 poster="/esp32-poster.webp"
                 className={videoClasses}
                 onClick={() => openModal("/esp32-demo.mp4")}
-                onMouseOver={(event) => event.target.play()}
-                onMouseOut={(event) => event.target.pause()}
+              // onMouseOver={(event) => event.target.play()}
+              // onMouseOut={(event) => event.target.pause()}
               >
                 <source src="/esp32-demo.mp4" type="video/mp4" />
                 <track kind="captions" label="English" srcLang="en" default />
@@ -104,7 +104,8 @@ export function CreativeEngineering() {
                   Optimized resources for smooth playback on limited hardware.
                 </li>
               </ul>
-              <button className="w-fit px-4 py-2 rounded-[7px] glass-card hover:bg-white/5 transition-colors">More...</button>
+              {/* will uncomment when i figure out the page architecture */}
+              {/* <button className="w-fit px-4 py-2 rounded-[7px] glass-card hover:bg-white/5 transition-colors">More...</button> */}
             </div>
           </div>
 
@@ -120,8 +121,8 @@ export function CreativeEngineering() {
                 preload="metadata"
                 poster="/mobile-poster.webp"
                 className={videoClasses}
-                onMouseOver={(event) => event.target.play()}
-                onMouseOut={(event) => event.target.pause()}
+                // onMouseOver={(event) => event.target.play()}
+                // onMouseOut={(event) => event.target.pause()}
                 onClick={() => openModal("/mobile-compressed.mp4")}
               >
                 <source src="/mobile-compressed.mp4" type="video/mp4" />
@@ -147,7 +148,7 @@ export function CreativeEngineering() {
                   Showcased hardware modification and thermal management skills.
                 </li>
               </ul>
-              <button className="w-fit px-4 py-2 rounded-[7px] glass-card hover:bg-white/5 transition-colors">More...</button>
+              <button onClick={() => window.open("/s21-mod", "_blank")} className="w-fit px-4 py-2 rounded-[7px] glass-card hover:bg-white/5 transition-colors">More...</button>
             </div>
           </div>
         </div>

@@ -92,6 +92,7 @@ export function ProjectShowcase() {
         {projectDetails.map((project) => (
           <div
             key={project.id}
+            onClick={() => window.open(project.link, "_blank")}
             className="project-card-observable opacity-0 group relative w-[350px] h-[280px] glass-card rounded-2xl overflow-hidden"
           >
             {/* Content Container */}
@@ -111,13 +112,14 @@ export function ProjectShowcase() {
             <div className="absolute inset-0 bg-black/80 flex flex-col justify-center items-center gap-6 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-sm p-6">
               <div className="relative w-full h-32 rounded-lg overflow-hidden shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
                 <Image
+
                   src={project.thumbnail}
                   alt={`${project.name} thumbnail`}
                   fill
                   sizes="350px"
                   quality={50}
                   loading="lazy"
-                  className="object-cover"
+                  className="object-cover hover:cursor-pointer"
                 />
               </div>
 

@@ -2,6 +2,9 @@
 const nextConfig = {
   compress: true,
   trailingSlash: false,
+  images: {
+    qualities: [25, 50, 60],
+  },
   async headers() {
     return [
       {

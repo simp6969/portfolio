@@ -1,10 +1,10 @@
 export function Header() {
   return (
-    <div className="sticky header bg-[var(--primary-bg-color)] top-0 h-[60px] z-10 ">
+    <div className=" header bg-[var(--primary-bg-color)] top-0 h-[60px] z-10 ">
       <div className="headerContent flex flex-row gap-[10px] items-center h-full px-6">
         <div className="w-[50%]">
           <h1 className="text-[20px] font-bold text-[var(--primary-text)]">
-            <a href="#page1" className="hover:cursor-pointer hover:text-[var(--primary-accent-color)] transition-colors">
+            <a href="/" className="hover:cursor-pointer hover:text-[var(--primary-accent-color)] transition-colors">
               Portfolio
             </a>
           </h1>
